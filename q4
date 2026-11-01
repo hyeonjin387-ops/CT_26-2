@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+    int px1, px2, py1, py2;
+    int qx1, qx2, qy1, qy2;
+
+    scanf("%d %d %d %d",&px1,&py1,&px2,&py2);
+    scanf("%d %d %d %d",&qx1,&qy1,&qx2,&qy2);
+    int x_min = (px2 < qx2) ? px2 : qx2;
+    int x_max = (px1 > qx1) ? px1 : qx1;
+    int x = x_min - x_max;
+
+    int y_min = (py2 < qy2) ? py2 : qy2;
+    int y_max = (py1 > qy1) ? py1 : qy1;
+    int y = y_min - y_max;
+
+    if(x>0 && y>0){
+        printf("FACE");
+    }   
+    else if((x==0 && y>0) || (x>0&&y==0) ){
+        printf("LINE");
+    }
+    else if(x==0 && y==0){
+        printf("POINT");
+    }
+    else
+    printf("NULL");
+
+    return 0;
+    
+}
